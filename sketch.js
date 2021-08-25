@@ -20,10 +20,12 @@ function setup() {
   createCanvas(800,400);
   iss1=createSprite(330, 130, 50, 50);
   iss1.addImage(iss);
+  iss1.debug=true;
+  iss1.setCollider("circle",0,0,80);
   iss1.scale=0.25;
   spacecraft=createSprite(285,240,50,50);
   spacecraft.addImage(space1);
-  spacecraft.scale=0.15;
+  spacecraft.scale=0.1;
 }
 
 function draw() {
@@ -46,7 +48,7 @@ spacecraft.y=spacecraft.y-2;
     }
 
   }  
-  if(spacecraft.y<=(iss.y+70)&&spacecraft.x<=(iss.x-10)){
+  if(spacecraft.y<=(iss1.y+70)&&spacecraft.x<=(iss1.x-10)){
     hasDocked=true;
     console.log("yes");
     fill("blue");
